@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">JobTracker</h1>
+        <ul class="nav-links">
+            <li><a href="#">DashBoard</a></li>
+            <li><a href="#">Contact-Us</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="main-container">
+            <h1>Hello, Guest</h1>
+            <p>Welcome to your personal Job tracker</p>
+
+            <div class="label-container">
+                <input type="radio" name="tabs" id="tab1" checked>
+                <label class="tab-labels" for="tab1">Log Application</label>
+
+                <input type="radio" name="tabs" id="tab2" >
+                <label class="tab-labels" for="tab2">Application List</label>
+
+                
+                <div class="tab-content" id="content1">
+                    <h2>Log Application:</h2>
+
+                    <div class="input-container">
+                        <label for="jobNameInput">Job Name:</label> <br />
+                        <input id="jobNameInput" type="text" placeholder="Enter Job Name:"> <br />
+
+                        <label for="jobUrlInput">Job Url:</label> <br />
+                        <input id="jobUrlInput" type="text" placeholder="Enter Job Url:"> <br />
+
+                        <label for="companyInput">Company:</label> <br />
+                        <input id="companyInput" type="text" placeholder="Enter Company:"> <br />
+
+                        <label for="positionInput"> Job Position:</label> <br />
+                        <input id="positionInput" type="text" placeholder="Enter Position:"> <br />
+
+                        <label for="statusInput">Status:</label> <br />
+                        <select id="statusInput"> 
+                            <option value="applied" selected>Applied</option>
+                            <option value="interview">Interview</option>
+                            <option value="rejected">Rejected</option>
+                            <option value="accepted">Accepted</option>
+                        </select> <br />
+
+                        <label for="jobNotes">Notes:</label> <br />
+                        <textarea id="jobNotes"></textarea> <br />
+
+                        <button id="submitBtn">Submit</button>
+                    </div>
+                </div>
+
+             <div class="tab-content" id="content2">
+                <div class="filter">
+                    <button id="filterBtn">Filter</button>
+                        <div id="filterInputs" class="filter-active">
+                            <input id="companyFilterInput" type="text" placeholder="Company:">
+                            <select id="statusFilterInput"> 
+                                <option value="">Status Filter</option>
+                                <option value="applied">Applied</option>
+                                <option value="interview">Interview</option>
+                                <option value="rejected">Rejected</option>
+                                <option value="accepted">Accepted</option>
+                            </select>
+                            <button id="clearFiltersBtn">Clear</button>
+                            <button id="filterSearchBtn">Search</button>
+                        </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Job Name</th>
+                            <th>Url</th>
+                            <th>Company</th>
+                            <th>Position</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td>PlaceHolder</td>
+                            <td>UrlPlaceholder</td>
+                            <td>CompanyPH</td>
+                            <td>PositionPH</td>
+                            <td>Applied</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+                
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+            
+    

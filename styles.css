@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+
+body {
+  background-color: #f7f7f7;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(27, 30, 33);
+  color: white;
+  padding: 15px 30px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+
+.nav-links a:hover {
+  color: #929aab;
+  text-decoration: underline;
+}
+
+.logo {
+  font-weight: 800;
+}
+
+
+
+
+main {
+  flex-grow: 1;        
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  padding: 20px;
+}
+
+
+.main-container {
+  width: 40%;
+  margin-top: 50px;       
+  background-color: #fff; 
+  padding: 40px;         
+  border-radius: 12px;   
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;         
+  border: none; 
+}
+
+.main-container h1 {
+  margin-bottom: 5px;
+}
+
+.main-container p {
+  margin-bottom: 25px;
+}
+
+.input-container label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #555;
+}
+
+.input-container input, 
+.input-container select, 
+.input-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 10px 0; 
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box; 
+  font-family: inherit;
+}
+
+#submitBtn {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(27, 30, 33);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+#submitBtn:hover {
+  background-color: #444;
+}
+
+
+input[type="radio"] {
+  display: none;
+}
+
+.label-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centers tabs horizontally */
+  gap: 10px;
+}
+
+.tab-labels {
+  padding: 10px 45px;
+  background-color: #d5d5d5;
+  border-radius: 5px;
+  color: #000;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.tab-content {
+  display: none;
+  margin: 20px 0;
+  width: 100%;
+}
+
+input[type="radio"]:checked+.tab-labels {
+  background-color: #4d63dd;
+  color: #fff;
+
+}
+
+#tab1:checked~#content1,
+#tab2:checked~#content2 {
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-radius: 15px;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: rgb(27, 30, 33);
+  color: #f7f7f7;
+}
+
+tr {
+  background-color: #f3f3f3;
+  transition: 0.3s;
+}
+
+tr:hover {
+  background-color: #d3d3d3;
+}
+
+#filterBtn {
+  font-size: 15px;
+  padding: 5px 30px ;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #4d63dd ;
+  color: #fff;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-active {
+  display: none;
+}

@@ -14,6 +14,18 @@ const statusFilterInput = document.getElementById("statusFilterInput")
 const filterSubmitBtn = document.getElementById("filterSearchBtn")
 const clearFiltersBtn = document.getElementById("clearFiltersBtn")
 
+// Detail card Dom variables //
+const modalDiv = document.getElementById("modalShow")
+
+const jobNameDetail = document.getElementById("jobNameDetail")
+const jobUrlDetail = document.getElementById("jobUrlDetail")
+const companyDetail = document.getElementById("companyDetail")
+const positionDetail = document.getElementById("positionDetail")
+const statusDetail = document.getElementById("statusDetail")
+const noteDetail = document.getElementById("noteDetail")
+
+const exitModalBtn = document.getElementById("exitModalBtn")
+
 
 
 window.onload = function () {
@@ -33,6 +45,12 @@ window.onload = function () {
 function addRowToTable(application) {
     const tableBody = document.getElementById("tableBody")
     const tableRow = document.createElement("tr")
+    tableRow.dataset.name = application.name;
+    tableRow.dataset.url = application.url;
+    tableRow.dataset.company = application.company;
+    tableRow.dataset.position = application.position;
+    tableRow.dataset.status = application.status;
+    tableRow.dataset.notes = application.notes;
     tableRow.innerHTML =`
     <td>${application.name}</td>
     <td><a href="${application.url}">Link</a></td>
@@ -77,15 +95,12 @@ function handleSubmit() {
     jobNameInput.value = ""
     jobUrlInput.value = ""
     companyInput.value = ""
-    position.value = ""
-    status.value = ""
+    positionInput.value = ""
+    statusInput.value = ""
+    jobNotes.value = ""
     
 }
 
-submitBtn.addEventListener("click", handleSubmit)
-filterBtn.addEventListener("click", () => {
-    filterInputs.classList.toggle("filter-active")
-})
 
 
 function companyInputFilter () {
@@ -138,6 +153,41 @@ function handleClearBtn () {
     applications.forEach((element) => addRowToTable(element))
 }
 
+function handleAppDetail (row) {
+    modalDiv.classList.toggle("detailActive")
+    jobNameDetail.textContent = row.dataset.name;
+    jobUrlDetail.textContent = row.dataset.url;
+    companyDetail.textContent = row.dataset.company;
+    positionDetail.textContent = row.dataset.position;
+    statusDetail.textContent = row.dataset.status;
+    if (row.dataset.notes !== "") {
+        noteDetail.textContent = `${row.dataset.notes}`
+    } else {
+        noteDetail.textContent = "No notes yet."
+    }
+
+    
+}
+
+function handleExitJobDetail () {
+    modalDiv.classList.toggle("detailActive")
+}
+
+
+submitBtn.addEventListener("click", handleSubmit)
+filterBtn.addEventListener("click", () => {
+    filterInputs.classList.toggle("filter-active")
+})
 filterSubmitBtn.addEventListener("click", companyInputFilter)
 clearFiltersBtn.addEventListener("click", handleClearBtn)
+
+tableBody.addEventListener("click", (event) => {
+    const row = event.target.closest("tr")
+    if (!row) return;
+    handleAppDetail(row)
+})
+
+exitModalBtn.addEventListener("click", () => {
+    modalDiv.classList.toggle("detailActive")
+})
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contactStyles.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">JobTracker</h1>
+        <ul class="nav-links">
+            <li><a href="index.html">DashBoard</a></li>
+            <li><a href="contactUs.html">Contact-Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <h1>Contact Us</h1>
+
+            <div class="input-container">
+                <label for="nameInput">Name:</label>
+                <input id="nameInput" type="text" placeholder="Name">
+
+                <label for="emailInput">Email:</label>
+                <input id="emailInput" type="text" placeholder="Email">
+
+                <label for="textArea">Message:</label>
+                <textarea id="textArea" placeholder="Your message..."></textarea>
+
+                <button id="submitBtn">Submit</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        const submitBtn = document.getElementById("submitBtn")
+
+        submitBtn.addEventListener("click", () => {
+            alert("Submitted Contact Request(just a demo)")
+        })
+    </script>
+</body>
+</html>

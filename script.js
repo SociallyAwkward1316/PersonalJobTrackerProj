@@ -14,6 +14,9 @@ const statusFilterInput = document.getElementById("statusFilterInput")
 const filterSubmitBtn = document.getElementById("filterSearchBtn")
 const clearFiltersBtn = document.getElementById("clearFiltersBtn")
 
+const jokeBtn = document.getElementById("jokeBtn")
+const jokeOutput = document.getElementById("jokeOutput")
+
 // Detail card Dom variables //
 const modalDiv = document.getElementById("modalShow")
 
@@ -311,3 +314,15 @@ exitModalBtn.addEventListener("click", () => {
 
 editInfoBtn.addEventListener("click", editInfoBtnClick)
 deleteBtn.addEventListener("click", handleDelete)
+
+
+jokeBtn.addEventListener("click", async () => {
+
+    const response = await fetch("https://official-joke-api.appspot.com/random_joke")
+
+    const data = await response.json()
+
+    jokeOutput.innerHTML = `<strong>Setup:</strong> ${data.setup} <br> <strong>Punchline:</strong> ${data.punchline}`
+
+    jokeOutput.classList.toggle("Display")
+})

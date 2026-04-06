@@ -296,3 +296,19 @@ tr:hover {
 .filter-active {
   display: none;
 }
+
+
+#jokeBtn {
+  font-size: 15px;
+  padding: 5px 30px ;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #4d63dd ;
+  color: #fff;
+}
+
+.Display {
+  display: none;
+}
